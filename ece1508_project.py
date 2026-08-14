@@ -300,6 +300,8 @@ with torch.no_grad():
             canvas[i*28:(i+1)*28, j*28:(j+1)*28] = image
 
 plt.imshow(canvas)
+plt.xticks([])
+plt.yticks([])
 plt.xlabel("Latent Dimension 1")
 plt.ylabel("Latent Dimension 2")
 plt.title("Generated Images Across the 2D Latent Space")
@@ -317,6 +319,7 @@ original_strip = torch.cat([test_images[i].cpu() for i in range(num_images)], di
 
 plt.imshow(original_strip.squeeze())
 plt.title("Original Images")
+plt.axis("off")
 plt.show()
 
 
